@@ -17,7 +17,7 @@ class RequestModel(BaseModel):
 
 @app.get("/")
 def read_root():
-   return {"Hello": "World"}
+   return {"Hello": "Test"}
 
 
 @app.get("/items/{item_id}")
