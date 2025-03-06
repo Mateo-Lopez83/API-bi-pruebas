@@ -1,26 +1,24 @@
 from pydantic import BaseModel
-'''
-- `r_standard`
-- `g_standard`
-- `class_GALAXY`
-- `class_STAR`
-- `mjd_sequential_standard`
-- `month_sin_standard`
-- `month_cos_standard`
-- `x_cord_standard`
-- `y_cord_standard`
-- `z_cord_standard`
-'''
-class DataModel(BaseModel):
 
-# Estas varibles permiten que la librería pydantic haga el parseo entre el Json recibido y el modelo declarado.
-    r: float
-    g: float
-    mjd: int
+class DataModel(BaseModel):
+    
+    objid: int
     ra: float
     dec: float
-    clase: object
-
-#Esta función retorna los nombres de las columnas correspondientes con el modelo exportado en joblib.
+    u: float
+    g: float
+    r: float
+    i: float
+    z: float
+    run: int
+    camcol: int
+    field: int
+    score: float
+    clean: int
+    classStr: object
+    mjd: int
+    rowv: float
+    colv: float
+    
     def columns(self):
-        return ["r","g","mjd","ra", "dec", "class"]
+        return ["objid","ra","dec","u","g","r","i","z","run","camcol","field","score","clean","class","mjd","rowv","colv"]
